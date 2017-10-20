@@ -12,6 +12,6 @@ templates:
       prefixStack: false
 
 deployments:
-  <name of project>-upload:
+  svillafe-aws-microservice-workshop-upload:
   template: svillafe-aws-microservice-workshop
   actions: [uploadLambda]
