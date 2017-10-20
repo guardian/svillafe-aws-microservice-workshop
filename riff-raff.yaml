@@ -15,3 +15,16 @@ deployments:
   svillafe-aws-microservice-workshop-upload:
     template: svillafe-aws-microservice-workshop
     actions: [uploadLambda]
+
+  svillafe-aws-microservice-workshop-cfn:
+    type: cloud-formation
+    app: svillafe-aws-microservice-workshop
+    parameters:
+      prependStackToCloudFormationStackName: false
+      cloudFormationStackName: svillafe-aws-microservice-workshop
+      templatePath: cfn.yaml
+    dependencies: [svillafe-aws-microservice-workshop-upload]
+  svillafe-aws-microservice-workshop-lambda-update:
+    template: svillafe-aws-microservice-workshop
+    actions: [updateLambda]
+    dependencies: [svillafe-aws-microservice-workshop-cfn]
