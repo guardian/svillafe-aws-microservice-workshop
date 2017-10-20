@@ -8,22 +8,10 @@ templates:
     parameters:
       bucket: gu-jr-microservice-workshop-dist
       functionNames: [svillafe-aws-microservice-workshop-]
-      fileName: svillafe-aws-microservice-workshop.zip
+      fileName:  svillafe-aws-microservice-workshop.zip
       prefixStack: false
 
 deployments:
-  jr-microservice-upload:
-    template: svillafe-aws-microservice-workshop
-    actions: [uploadLambda]
-  svillafe-aws-microservice-workshop-cfn:
-    type: cloud-formation
-    app: svillafe-aws-microservice-workshop
-    parameters:
-      prependStackToCloudFormationStackName: false
-      cloudFormationStackName: svillafe-aws-microservice-workshop
-      templatePath: cfn.yaml
-    dependencies: [jr-microservice-upload]
-  jr-microservice-lambda-update:
-    template: svillafe-aws-microservice-workshop
-    actions: [updateLambda]
-    dependencies: [svillafe-aws-microservice-workshop-cfn]
+  <name of project>-upload:
+  template: svillafe-aws-microservice-workshop
+  actions: [uploadLambda]
