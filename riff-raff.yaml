@@ -13,5 +13,5 @@ templates:
 
 deployments:
   svillafe-aws-microservice-workshop-upload:
-  template: svillafe-aws-microservice-workshop
-  actions: [uploadLambda]
+    template: svillafe-aws-microservice-workshop
+    actions: [uploadLambda]
