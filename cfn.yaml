@@ -109,15 +109,13 @@ Resources:
    - WorkshopApi
    - WorkshopLambda
    - WorkshopApiResource
-
   WorkshopApiDeployment:
    Type: AWS::ApiGateway::Deployment
    Properties:
      Description: Deploys the API into an environment/stage
      RestApiId: !Ref WorkshopApi
    DependsOn: WorkshopApiMethod
-
-   WorkshopApiStageProd:
+  WorkshopApiStageProd:
     Type: AWS::ApiGateway::Stage
     Properties:
       StageName: !Ref Stage
@@ -135,8 +133,7 @@ Resources:
     DependsOn:
     - WorkshopApi
     - WorkshopApiDeployment
-
-   WorkshopLambdaInvokePermission:
+  WorkshopLambdaInvokePermission:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
